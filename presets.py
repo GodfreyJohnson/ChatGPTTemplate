@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+
 # 错误信息
 standard_error_msg = "☹️发生了错误："  # 错误信息的标准前缀
 error_retrieve_prompt = "请检查网络连接，或者API-Key是否有效。"  # 获取对话时发生错误
@@ -18,13 +19,10 @@ HIDE_MY_KEY = False  # 如果你想在UI中隐藏你的 API 密钥，将此值�
 SIM_K = 5
 INDEX_QUERY_TEMPRATURE = 1.0
 
-title = """<h1 align="left" style="min-width:200px; margin-top:0;">川虎ChatGPT 🚀</h1>"""
+title = """<h1 align="left" style="min-width:200px; margin-top:0;">ChatGPT 🚀</h1>"""
 description = """\
 <div align="center" style="margin:16px 0">
 
-由Bilibili [土川虎虎虎](https://space.bilibili.com/29125536) 和 [明昭MZhao](https://space.bilibili.com/24807452)开发
-
-访问川虎ChatGPT的 [GitHub项目](https://github.com/GaiZhenbiao/ChuanhuChatGPT) 下载最新版脚本
 
 此App使用 `gpt-3.5-turbo` 大语言模型
 </div>
