@@ -18,12 +18,15 @@ import colorama
 from presets import *
 from utils import *
 
-def construct_index_by_dir(api_key, file_src):
-    logging.info("开始查询结果。" )
+def construct_index_by_dir(api_key, 
+                           file_src,
+                           ):    
     os.environ["OPENAI_API_KEY"] = api_key
     documents = SimpleDirectoryReader(file_src).load_data()
-    index = GPTTreeIndex(documents)
-    index.save_to_disk('index.json')
+
+    index = GPTSimpleVectorIndex(documents, chunk_size_limit=10000)
+    index.save_to_disk(save_path='index.json')
+    logging.info(f"索引构建成功到目录：{file_src}" )
 
 def get_documents(file_src):
     documents = []

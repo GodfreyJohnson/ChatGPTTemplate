@@ -276,7 +276,7 @@ def predict(
             construct_index_by_dir(openai_api_key, file_src)
             msg = "索引构建完成，获取回答中……"
         os.environ["OPENAI_API_KEY"] = openai_api_key
-        index = GPTTreeIndex.load_from_disk('index.json')
+        index = GPTSimpleVectorIndex.load_from_disk('index.json')
         yield chatbot, history, msg, all_token_counts
         history, chatbot, status_text = chat_ai(openai_api_key, index, inputs, history, chatbot)
         yield chatbot, history, status_text, all_token_counts
