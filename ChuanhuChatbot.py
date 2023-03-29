@@ -145,16 +145,16 @@ with gr.Blocks(
                     submitBtn = gr.Button("发送", variant="primary")
             with gr.Row(scale=1):
                 emptyBtn = gr.Button(
-                    "🧹 新的对话",
+                    "🧹 新的对话",visible=False
                 )
-                retryBtn = gr.Button("🔄 重新生成")
-                delLastBtn = gr.Button("🗑️ 删除一条对话")
-                reduceTokenBtn = gr.Button("♻️ 总结对话")
+                retryBtn = gr.Button("🔄 重新生成",visible=False)
+                delLastBtn = gr.Button("🗑️ 删除一条对话",visible=False)
+                reduceTokenBtn = gr.Button("♻️ 总结对话",visible=False)
 
         with gr.Column():
             with gr.Column(min_width=50, scale=1):
                 with gr.Tabs() as tabs:
-                    with gr.TabItem(label="ChatGPT"):
+                    with gr.TabItem(label="GPT Index"):
                         keyTxt = gr.Textbox(
                             show_label=True,
                             placeholder=f"OpenAI API-key...",
@@ -208,8 +208,8 @@ with gr.Blocks(
                                             )[0],
                                         ).style(container=False)
 
-                    #with gr.TabItem(label="保存/加载", visible=False):
-                        with gr.Accordion(label="保存/加载对话历史记录", open=True, visible=False):
+                    with gr.TabItem(label="保存/加载"):
+                        with gr.Accordion(label="保存/加载对话历史记录", open=True):
                             with gr.Column():
                                 with gr.Row():
                                     with gr.Column(scale=6):
@@ -231,8 +231,8 @@ with gr.Blocks(
                                         ).style(container=True)
                                     with gr.Column(scale=1):
                                         saveHistoryBtn = gr.Button("💾 保存对话")
-                                        exportMarkdownBtn = gr.Button("📝 导出为Markdown")
-                                        gr.Markdown("默认保存于history文件夹")
+                                        exportMarkdownBtn = gr.Button("📝 导出为Markdown",visible=False)
+                                        gr.Markdown("默认保存于history文件夹",visible=False)
                                 with gr.Row():
                                     with gr.Column():
                                         downloadFile = gr.File(interactive=True)

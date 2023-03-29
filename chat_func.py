@@ -20,6 +20,8 @@ from utils import *
 
 # logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s")
 
+os.environ["TOKENIZERS_PARALLELISM"]="true"
+
 if TYPE_CHECKING:
     from typing import TypedDict
 
